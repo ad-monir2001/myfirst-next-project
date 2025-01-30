@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function ServiceDetailsPage({ params }) {
-  const ServiceId = params.id;
+  const ServiceId = params?.id;
   const fakeData = [
     {
       _id: '65a1b2c3d4e5f67890123456',
@@ -29,17 +29,17 @@ export default function ServiceDetailsPage({ params }) {
       details: 'An entrepreneur running a successful e-commerce startup.',
     },
   ];
-  const oneData = fakeData.filter((data) => data._id === ServiceId);
-  console.log(oneData);
+  const oneData = fakeData.filter((data) => data?._id === ServiceId);
+
   return (
     <div>
       <h1 className="font-semibold text-3xl my-2">DetailsPage</h1>
       <p>Service id {ServiceId}</p>
       <div className="border rounded-lg my-3 p-5">
         {oneData.map((dat) => (
-          <div>
-            <p>Name:{dat.name}</p>
-            <p>Details:{dat.details}</p>
+          <div key={dat?._id}>
+            <p>Name:{dat?.name}</p>
+            <p>Details:{dat?.details}</p>
           </div>
         ))}
       </div>
