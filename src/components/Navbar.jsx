@@ -1,23 +1,26 @@
-'use client'
+'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React from 'react';
 
 const Navbar = () => {
-  const pathName = usePathname()
-  if(!pathName.includes('dashboard')){
+  const pathName = usePathname();
+  if (!pathName.includes('dashboard')) {
     return (
-      <div className="">
+      <nav>
         <ul className="font-semibold flex justify-evenly my-4">
           <li>
             <Link href="/">Home</Link>
           </li>
-  
+
           <li>
             <Link href="/about">About</Link>
           </li>
           <li>
             <Link href="/services">Services</Link>
+          </li>
+          <li>
+            <Link href="/contact">Contact</Link>
           </li>
           <li>
             <Link href="/admin-dashboard">Admin</Link>
@@ -32,10 +35,9 @@ const Navbar = () => {
             <Link href="/registration">Registration</Link>
           </li>
         </ul>
-      </div>
+      </nav>
     );
   }
-  
 };
 
 export default Navbar;

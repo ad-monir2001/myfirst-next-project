@@ -33,7 +33,9 @@ export default function ServiceDetailsPage({ params }) {
 
   return (
     <div>
-      <h1 className="font-semibold text-3xl my-2">DetailsPage</h1>
+      <h1 className="font-semibold text-3xl my-2 text-center py-4">
+        Details Page
+      </h1>
       <p>Service id {ServiceId}</p>
       <div className="border rounded-lg my-3 p-5">
         {oneData.map((dat) => (
